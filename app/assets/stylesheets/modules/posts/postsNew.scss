@@ -1,0 +1,90 @@
+.new_contents{
+  height: 500px;
+  width: 70%;
+
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.new_content{
+  height: 500px;
+  width: 800px;
+  background-color: rgba(25, 0, 85, 30);
+  margin-top: 300px;
+}
+
+.form-group{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__form{
+    height: 250px;
+    width: 80%;
+    // background-color: red;
+    &__title{
+      height: 50px;
+      width:100%;
+      margin-top: 30px;
+      font-size: 1.4em;
+    }
+  &__image-message{
+    height: 100%;
+    width:100%;
+    position: relative;
+    &__message{
+      height: 100%;
+      resize: none;
+      width:100%;
+      margin-top: 20px;
+      font-size: 1.4em;
+    }
+    &__label{
+      position: absolute;
+        bottom: -15px;
+        right: 0px;
+        padding: 15px 20px;
+        cursor: pointer;
+      &__icon{ 
+        font-size: 2em;
+        }
+      }
+    }
+  }
+}
+
+.hidden{
+  display: none;
+  
+}
+
+.submit-center{
+  text-align: center;
+}
+
+
+.submit-btn{
+  padding: 20px 60px;
+  font-size: 1.2em;
+  background-color: #000;
+  color: #fff;
+  border-style: none;
+  margin-top: 50px;
+  border: 1px solid;
+  &:hover{
+    background-color: rgb(58, 6, 32);
+  }
+}
+
+.edit-Thumbnail{
+  height: 100px;
+  width:  100px;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  bottom: -15px;
+  right: 0px;
+  padding: 15px 20px;
+  cursor: pointer;
+}

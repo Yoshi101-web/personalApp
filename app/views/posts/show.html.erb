@@ -1,0 +1,52 @@
+<div class="post-content">
+  <div class="post-content__left">
+    <div class="post-content__left__photo" style="background-image: url(<%= @post.image %>);">
+      <%= link_to "Top", root_path, class: "top" %>
+    </div>
+    
+  </div>
+  <div class="post-content__right">
+    <div class="post-content__right__upper">
+
+      <div class="post-content__right__upper__header">
+        <%= link_to user_path(@post.id), class:"post-content__right__upper__header__user-name" do %>
+          <%= @post.user.name %>
+        <% end %>
+        <div class="i-con-group">
+          <i class="fas fa-ellipsis-v"></i>
+            <%= link_to edit_post_path(@post.id) do %>
+              <h3 class="fa-ellipsis-v__edit">edit</h3>
+            <% end %>
+            <%= link_to post_path(@post.id), method: :delete, data: { confirm: 'Do you want to delete this post？' } do %>
+              <h3 class="fa-ellipsis-v__destroy">delete</h3>
+            <% end %>
+        </div>
+        <h2 class="post-content__right__upper__header__title"><%= @post.title %></h2>
+        <p class="post-content__right__upper__header__content"><%= @post.content %></p>
+        <h3 class="post-content__right__upper__header__created_at"><%= @post.created_at.strftime("%Y/%m/%d") %></h3>
+      </div>
+      <div class="post-content__right__upper__comments">
+        <div class="form">
+          <%= form_with(model: [@post, @comment], local: true, id: "new_comment") do |form| %>
+            <div class="show-submit-group">
+              <i class="fas fa-comments"></i>
+              <%= form.submit "SEND", class: "show-submit"%>
+            </div>
+            <%= form.text_area :text, placeholder: " comment", rows: "2",class: "textbox"%>
+          <% end %>
+        </div>
+    </div>
+  </div>
+
+  <div class="post-content__right__group">
+    <% @comments.each do |comment| %>
+      <div class="post-content__right__group__comment">
+        <h2 class="post-content__right__group__comment__user-name"><%= comment.user.name %></h2>
+        <h2 class="post-content__right__group__comment__message"><%= comment.text %></h2>
+      </div>
+    <% end %>
+  </div>
+
+  </div>
+</div>
+

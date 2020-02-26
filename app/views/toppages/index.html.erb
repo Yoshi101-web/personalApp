@@ -1,0 +1,37 @@
+<div class="wrapper">
+  <div class="header">
+    <div class="header__title">
+        <img src="/svg/Phovie_only_small.svg" class="header__title__logo" >
+    </div>
+    <%= link_to "log out", destroy_user_session_path, class: "log-out", method: :delete %>
+    <div class="header__menuWrapper">
+      <%= link_to "#menu", id: "menuButton" do %>
+        <span>MENU</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="sidebar">
+    <ul class="sidebar-list">
+      <li class="sidebar-item"><%= link_to "logout", "#", class: "sidebar-anchor" %></li>
+      <li class="sidebar-item"><%= link_to "logout", "#", class: "sidebar-anchor" %></li>
+      <li class="sidebar-item"><%= link_to "logout", "#", class: "sidebar-anchor" %></li>
+    </ul>
+  </div>
+  <div class="contents">
+    <div class="content">
+      <div class="background-video">
+
+      </div>
+      <div class="dot"></div>
+    </div>
+  </div>
+</div>
+<div class="nav-right visible-xs">
+  <div class="button" id="btn">
+    <div class="bar top"></div>
+    <div class="bar middle"></div>
+    <div class="bar bottom"></div>
+  </div>
+</div>
+<!-- nav-right -->
+<main>

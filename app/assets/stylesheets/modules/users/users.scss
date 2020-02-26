@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Francois+One&display=swap');
+
+.signs{
+  height: 100vh;
+  width: 100vw;
+  z-index:0;
+  overflow: hidden;
+  .sign{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+      height: calc(80% + 100px);
+      width: 80%;
+      margin-left: 80px;
+      
+      h2{
+        font-family: 'Francois One', ;
+        color: white;
+        font-size: 3em;
+      }
+      
+      .new_user{
+        font-family: 'Francois One', ;
+        font-size: 1em;
+        .field{
+          margin-top: 20px;
+          color: white;
+          font-size: 1.2em;
+        }
+        input{
+          height: 30px;
+          width: 50%;
+        }
+        .actions{
+          .sign-btn{
+            font-family: 'Francois One', ;
+            font-size: 1.2em;
+            height: 60px;
+            width: 120px;
+            color: white;
+            border-radius: 8px;
+            background-color: rgba(35, 0, 58, 0.5);
+            cursor: pointer;
+            margin-bottom: 70px;
+            &:hover{
+              background-color: hsla(276, 40%, 70%, 0.4);
+            }
+          }
+          .sign-up{
+            margin-top: 20px;
+          }
+        }
+      }
+      // .back-btn{
+        //   margin-top: 30px;
+        //   margin-left: 5px;
+        //   font-size: 1.7em;
+        //   height: 50px;
+        //   width: 100px;
+        //   border: none;
+        //   color: black;
+        //   background-color: #ffffff00;
+        //   -webkit-text-stroke-width: 1.2px;
+        //   -webkit-text-stroke-color: rgb(255, 255, 255);
+        //   outline:0;
+        //   cursor: pointer;
+        // }
+      .change-sign{
+        font-family: 'Francois One', ;
+        font-size: 1.4em;
+        padding: 5px 10px;
+        color: white;
+        text-decoration: none;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        border-radius: 3px;
+        cursor: pointer;
+        opacity: 0.9;
+        &:hover{
+          background-color: rgba(255, 255, 255, 0.3);;
+        }
+      }
+    }
+  }
+}
+
+.signs::before{
+  content: '';
+  background-image: url('https://manimanimag.jp/wp-content/uploads/2018/01/01-skytree.jpg');
+  filter: blur(8px);/*ぼかし度*/
+  position: absolute;
+  /* 参考: http://designcolor-web.com/2016/09/14/css-blur-effects-background/*/
+  top: -8px;
+  left: -8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+}
+.notice{
+  color: white;
+}
+
+.alert{
+  color: white;
+}

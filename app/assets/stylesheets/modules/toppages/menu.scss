@@ -1,0 +1,69 @@
+.menuWrapper {
+  position: relative;
+  z-index: 10;
+  border: 1px solid #ccc;
+  width: 50px;
+  height: 50px;
+}
+
+#menuButton {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  z-index: 10;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+#menuButton span,
+#menuButton::before,
+#menuButton::after {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  width: 36px;
+  height: 4px;
+  margin: auto;
+  background: rgb(255, 255, 255);
+}
+#menuButton span {
+  overflow: hidden;
+  z-index: 11;
+  color: rgb(255, 255, 255);
+}
+#menuButton::before {
+  z-index: 12;
+  transform: translate(0, -12px);
+  content: "";
+}
+#menuButton::after {
+  z-index: 12;
+  transform: translate(0, 12px);
+  content: "";
+}
+
+
+// 動作css
+#menuButton span {
+  opacity: 1;
+  transition: opacity 150ms 50ms;
+}
+#menuButton::before,
+#menuButton::after {
+  transition: transform 200ms;
+}
+
+#menuButton.active span {
+  opacity: 0;
+  transition: opacity 150ms;
+}
+#menuButton.active::before {
+  transform: rotate(45deg);
+}
+#menuButton.active::after {
+  transform: rotate(-45deg);
+}

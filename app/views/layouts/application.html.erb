@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PersonalApp</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="header">
+        <%= link_to root_path, class:"header__title" do %>
+            <img src="/svg/Phovie_only_small.svg" class="header__title__logo" >
+        <% end %>
+        <%= link_to "log out", destroy_user_session_path, class: "log-out", method: :delete %>
+        <div class="header__menuWrapper">
+          <%= link_to "#menu", id: "menuButton" do %>
+            <span>MENU</span>
+          <% end %>
+        </div>
+      </div>
+      <div class="position">
+          <%= yield %>
+      </div>
+    </div>
+  </body>
+</html>

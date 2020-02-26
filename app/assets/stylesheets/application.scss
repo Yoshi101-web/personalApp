@@ -1,0 +1,51 @@
+@import "reset";
+// @import "config/colors";
+@import "modules/toppages/toppages";
+@import "modules/posts/postsDestroy";
+@import "modules/posts/postsShow";
+@import "modules/posts/postsNew";
+@import "modules/posts/posts";
+@import "modules/users/usersShow";
+@import "modules/users/users";
+@import "font-awesome-sprockets";
+@import "font-awesome";
+
+
+.wrapper{
+  position: relative;
+  height: 0;
+  
+  .header{
+    height: 100px;
+    padding: 5px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(0, 0, 0,0.7);
+    transform: translateY(-75px);
+    transition: 0.4s;
+    opacity: 0;
+    &:hover{
+      transform: translateY(0px);
+      opacity: 1;
+    }
+    &__title{
+      border-bottom: 1.5px solid white;
+      
+      &__logo{
+        width: 200px;
+        height: auto;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+.position{
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}

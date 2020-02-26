@@ -1,0 +1,203 @@
+.post-content{
+  height: 100vh;
+  width: 100vw;
+  background-color: gray;
+  display: flex;
+
+  &__left{
+    height: 100vh;
+    width: calc(100vw - 400px);
+    background-color: red;
+    display: table-cell; /*上下中央*/
+    text-align: center; /*左右中央*/
+    vertical-align: middle; /*上下中央*/
+
+    &__photo{
+      width:auto;
+      height:100%;
+      max-width:calc(100vw - 400px);
+      max-height:100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      position: relative;
+
+      .top{
+        font-size:1.3em;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        color: white;
+        text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  &__right{
+    height: 100vh;
+    width: 400px;
+    background-color: white;
+    box-sizing: border-box;
+
+    &__upper{
+      height: 270px;
+
+      &__header{
+        height: 160px;
+        padding: 25px 20px 10px;
+        box-sizing: border-box;
+        background-color: yellow;
+        position: relative;
+        
+        &__user-name{
+          color: white;
+          font-size: 2em;
+          font-weight: bold;
+          cursor: pointer;
+          margin-top: 50px;
+          // padding-top: 20px;
+          text-decoration: none;
+          text-shadow:0 0 10px rgb(162, 0, 255);
+        }
+        .i-con-group{
+          height: 45px;
+          width: 50px;
+          background-color: rgb(66, 192, 50);
+          float: right;
+          text-align: right;
+          overflow: hidden;
+          cursor: pointer;
+          &:hover{
+            height: 105px;
+          }
+          a{
+            text-decoration: none;
+          }
+          .fa-ellipsis-v{
+            font-size: 1.1em;
+            padding: 15px 10px;
+            text-align: right;
+            cursor: pointer;
+
+            &__edit{
+              height: 28px;
+              line-height: 28px;
+              color: black;
+              font-size: 0.9em;
+              font-weight: bold;
+              text-align: center;
+              background-color:  rgba(0, 0, 0,0.5);
+              border: 1px solid rgba(0, 0, 0,0.5);
+              cursor: pointer;
+              transition: 0.2s;
+
+              &:hover{
+                background-color: rgba(255, 243, 241, 0.5);
+                color: gray;
+              }
+            }
+            &__destroy{
+              height: 28px;
+              line-height: 28px;
+              font-size: 0.9em;
+              font-weight: bold;
+              text-align: center;
+              background-color:  rgba(0, 0, 0,0.5);
+              border: 1px solid rgba(0, 0, 0,0.5);
+              cursor: pointer;
+
+              &:hover{
+                background-color: rgba(255, 243, 241, 0.5);
+                color: gray;
+              }
+            }
+          }
+        }
+        &__title{
+          font-size: 1.3em;
+        }
+        &__content{
+          font-size: 1.2em;
+        }
+        &__created_at{
+          position: absolute;
+          bottom:10px;
+          right: 20px;
+          font-size: 1em;
+        }
+      }
+      &__comments{
+        height: 100%;
+        width: 100%;
+
+        .form{
+          display: flex;
+          align-items: center;
+          padding: 5px 15px;
+
+          #new_comment{
+            width: 100%;
+            // margin: 0;
+            padding: 3px 5px;
+
+            .show-submit-group{
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              .fa-comments{
+                font-size: 1.5em;
+              }
+              .show-submit{
+                height: 30px;
+                width: 70px;
+                background-color: rgb(0, 0, 0);
+                color: white;
+                cursor: pointer;
+              }
+            }
+            #comment_text{
+              // height: 33px;
+              width: 100%;
+              margin-top: 5px;
+              font-size:1.3em;
+              outline: none;
+              resize: none;
+              border-radius: 6px;
+              border: 2px solid gray;
+            }
+          }
+        }
+      }
+
+    }
+    &__group{
+      height: calc(100vh - 270px);
+      padding: 5px 15px 0px;
+      box-sizing: border-box;
+      background-color: purple;
+      overflow: scroll;
+
+      &__comment{
+        padding-bottom: 10px;
+        background-color: lightblue;
+        overflow: scroll;
+
+        &__user-name{
+          font-size: 1.2em;
+          font-weight: bold;
+          margin-bottom: 5px;
+        }
+        &__message{
+          display: inline;
+          padding: 3px 10px;
+          box-sizing: border-box;
+          border-radius: 10px;
+          font-size: 1.2em;
+          background-color: rgb(184, 207, 193);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+<%= link_to post_path(post.id), class: "post-container" do %>
+  <div class="post-container__post-image" style="background-image: url(<%= post.image %>);">
+    <div class="post-container__post-title"><%= post.title %></div>
+    <div class="post-container__post-content"><%= post.content %></div>
+  </div>
+<% end %>
