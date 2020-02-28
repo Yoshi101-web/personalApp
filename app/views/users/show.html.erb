@@ -7,10 +7,10 @@
         <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)" data-swiper-parallax-x="50%">
           <img src="<%= post.image %>" class="entity-img" />
         </figure>
-        <div class="content">
-          <p class="title">Shaun Matthews</p>
-          <span class="caption" data-swiper-parallax-x="30%" data-swiper-parallax-opacity="0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
-        </div>
+        <%= link_to post_path(post.id), class: "content", id: "main-message" do %>
+            <p class="title"><%= post.title %></p>
+            <span class="caption" data-swiper-parallax-x="30%" data-swiper-parallax-opacity="0"><%= post.content %></span>
+        <% end %>
       </div>
     <% end %>
   </div>
@@ -28,7 +28,7 @@
           <img src="<%= post.image %>" class="entity-img" />
         </figure>
         <div class="content">
-          <p class="title">Shaun Matthews</p>
+          <p class="title"><%= post.title %></p>
         </div>
       </div>
     <% end %>
@@ -36,8 +36,8 @@
 </div>
 
 <script>
-  let mainSliderSelector = '.main-slider',
-      navSliderSelector = '.nav-slider';
+  let mainSliderSelector = '.main-slider';
+  let   navSliderSelector = '.nav-slider';
 
   // Main Slider
   let mainSliderOptions = {
@@ -54,10 +54,10 @@
       prevEl: '.swiper-button-prev',
     },
     on: {
-      init: function(){
+      init: function($, Swiper){
         this.autoplay.stop();
       },
-      imagesReady: function(){
+      imagesReady: function($, Swiper){
         this.el.classList.remove('loading');
         this.autoplay.start();
       }
@@ -77,10 +77,10 @@
         slideToClickedSlide: true,
         direction: 'vertical',
         on: {
-          imagesReady: function(){
+          imagesReady: function($, Swiper){
             this.el.classList.remove('loading');
           },
-          click: function(){
+          click: function($, Swiper){
             mainSlider.autoplay.stop();
           }
         }
