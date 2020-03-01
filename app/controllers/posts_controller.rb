@@ -10,8 +10,13 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to posts_path
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      flash.now[:alert] = 'Please post a photo or a video'
+      render :new
+    end
   end
 
   def show

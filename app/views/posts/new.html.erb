@@ -1,6 +1,7 @@
 <div class="new_background">
   <div class="new_contents">
     <div class="new_content">
+      <div class="flash-alert"><%= flash[:alert] %></div>
       <div class="form-group">
         <%= form_with(model: @post, local: true, class: "form-group__form") do |form| %>
           <%= form.text_field :title, class: 'form-group__form__title', placeholder: ' Title' %>

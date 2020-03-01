@@ -10,6 +10,7 @@
 	}
 }
 
+@import url('https://fonts.googleapis.com/css?family=Song+Myung&display=swap');
 
 .posts-all{
   height: auto;
@@ -63,12 +64,14 @@
             width: 100%;
             background-color: rgba(6, 3, 48, 0.8);
             &__post-title{
+              font-family: 'Song Myung', ;
               color: white;
               font-size: 40px;
               padding: 50px 60px 0px;
 
             }
             &__post-content{
+              font-family: 'Song Myung', ;
               color: white;
               padding: 50px 60px 0px;
               font-size: 20px;

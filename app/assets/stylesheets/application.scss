@@ -10,6 +10,8 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import url('https://fonts.googleapis.com/css?family=Oxanium:800&display=swap');
+
 .wrapper{
   position: relative;
   height: 0;
@@ -51,6 +53,7 @@
       justify-content: space-around;
 
       .current_user-name-btn, .post-btn, .log-out{
+        font-family: 'Oxanium', ;
         color: white;
         height: 100%;
         width: 170px;
