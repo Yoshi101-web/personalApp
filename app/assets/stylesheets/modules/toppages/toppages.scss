@@ -1,94 +1,98 @@
-@import "menu";
-// @import "sideBar";
-
-
-// .wrapper{
-//   height: 100vh;
-//   width: 100vw;
-//   background-color: rgba(0, 0, 0,0.4);
-//   position: relative;
-//   .header{
-//     height: 100px;
-//     margin-right: 30px;
-//     margin-left: 30px;
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: center;
-//     &__title{
-//       border-bottom: 1.5px solid white;
-      
-//       &__logo{
-//         width: 200px;
-//         height: auto;
-//       }
-//     }
-//   }
-
-
-
-
-
-  // .sidebar{
-  //   height: 100%;
-  //   width: 300px;
-  //   position: fixed;
-  //   top: 0;
-  //   z-index: 1;
-  //   right: 0;
-  //   background-color: rgba(239, 131, 84,0.8);
-  // }
-  .contents{
-    position: absolute;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 100vw;
-    z-index: -1;
-    
-    .background-video{
+.toppage-wrapper{
+  height: 100vh;
+  width: 100vw;
+  background-color: black;
+  .toppage-contents{
+    .toppage-content{
       height: 100vh;
       width: 100vw;
-      background-image: url("https://manimanimag.jp/wp-content/uploads/2018/01/01-skytree.jpg");
-      background-size: cover;
+      
+      #video-container{  
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        video{
+          min-width: 100%;
+          min-height: 100vh;
+          // z-index: 1;
+          
+        }
+      }
     }
-    
-    .dot{
-      background-size: 30px 30px;
-      margin: 0 auto;
-      background-color: #00A0E9;
-      background-image: radial-gradient(#ffffb1 15%, transparent 20%),
-      radial-gradient(#ffffb1 15%, transparent 20%);
-      background-position: 0 0, 15px 15px;
-      z-index: 9999;
+    .overlay {
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-image: linear-gradient(45deg, rgba(0,0,0,.2) 50%, rgba(0,0,0,.5) 50%);
+      background-size: 5px 5px;
+      z-index: 2;
+    }
+    .toppage-content__group{
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      text-align:center; 
+      .top-logo{
+        height: 190px;
+        width: auto;
+        margin-top: 120px;
+      }
+      .button-group{
+        font-size:3em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 100px;
+        &__sign-in{
+          width: 285px;
+          color: white;
+          background-color: rgba(44, 38, 83, 0.7);
+          margin: 0 60px;
+          padding:20px 50px;
+          border-radius:15px;
+          transition: 0.2s;
+          border: 2px solid white;
+          user-select: none;
+          text-decoration: none;
+          &:hover{
+            background-color: rgba(162, 158, 187, 0.8);
+          }
+          &:active{
+            color:black;
+            background-color: rgba(234, 232, 243,0.95);
+            box-shadow: 0 1px 23px 8px  rgba(234, 232, 243,0.5);
+          }
+        
+        }
+        &__sign-up{
+          width: 285px;
+          color: white;
+          background-color: rgba(44, 38, 83, 0.7);
+          margin: 0 60px;
+          padding:20px 50px;
+          border-radius:15px;
+          transition: 0.2s;
+          border: 2px solid white;
+          user-select: none;
+          text-decoration: none;
+          &:hover{
+            background-color: rgba(162, 158, 187, 0.8);
+          }
+          &:active{
+            color:black;
+            background-color: rgba(234, 232, 243,0.95);
+            box-shadow: 0 1px 23px 8px  rgba(234, 232, 243,0.5);
+          }
+        }
+      }
     }
   }
-// }
-
-
-
-
- 
-
-
-.log-out{
-  color: white;
 }
-
-
-
-
-// .containers{
-
-//   animation: transitionIn 0.7s;
-// }
-
-// @keyframes transitionIn {
-//   from {
-//     opacity: 0;
-//     transform: rotateY(50deg);
-//   }
-//   to {
-//     opacity: 1;
-//     transform: rotateY(0);
-//   }
-// }

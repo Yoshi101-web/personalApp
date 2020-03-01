@@ -10,20 +10,24 @@
   </head>
 
   <body>
-    <div class="wrapper">
-      <div class="header">
-        <%= link_to root_path, class:"header__title" do %>
-            <img src="/svg/Phovie_only_small.svg" class="header__title__logo" >
-        <% end %>
-        <div class="header__right">
-          <%= link_to  current_user.name, user_path(current_user.id), class: "current_user-name-btn" %>
-          <%= link_to "Post", new_post_path, class: "post-btn" %>
-          <%= link_to "Log out", destroy_user_session_path, class: "log-out", method: :delete %>
+    <% if user_signed_in? %>
+      <div class="wrapper">
+        <div class="header">
+            <%= link_to root_path, class:"header__title" do %>
+                <img src="/svg/Phovie_only_small.svg" class="header__title__logo-move" >
+            <% end %>
+            <div class="header__right">
+              <%= link_to  current_user.name, user_path(current_user.id), class: "current_user-name-btn" %>
+              <%= link_to "Post", new_post_path, class: "post-btn" %>
+              <%= link_to "Log out", destroy_user_session_path, class: "log-out", method: :delete %>
+            </div>
+        </div>
+        <div class="position">
+            <%= yield %>
         </div>
       </div>
-      <div class="position">
-          <%= yield %>
-      </div>
-    </div>
+    <% else%>
+      <%= yield %>
+    <% end %>
   </body>
 </html>

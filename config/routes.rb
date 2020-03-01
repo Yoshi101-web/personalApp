@@ -6,7 +6,4 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
   resources :toppages, only: [:index]
-  # resources :toppages, only: [:index] do
-  #   collection :sildeShowA
-  # end
 end

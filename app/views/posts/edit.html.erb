@@ -1,16 +1,18 @@
-<div class="new_contents">
-  <div class="new_content">
-    <div class="form-group">
-      <%= form_with(model: @post, local: true, class: "form-group__form") do |form| %>
-        <%= form.text_field :title, class: 'form-group__form__title', placeholder: 'Title' %>
-        <div class="form-group__form__image-message">
-          <%= form.text_area :content, class: 'form-group__form__image-message__message', placeholder: 'Type a message' %>
-          <div class="edit-Thumbnail" style="background-image: url(<%= @post.image %>);">
-        </div>
-        <div class="submit-center">
-          <%= form.submit "Send", class: "submit-btn b-btn" %>
-        </div>
-      <% end %>
+<div class="new_background">
+  <div class="new_contents">
+    <div class="new_content">
+      <div class="form-group">
+        <%= form_with(model: @post, local: true, class: "form-group__form") do |form| %>
+          <%= form.text_field :title, class: 'form-group__form__title', placeholder: 'Title' %>
+          <div class="form-group__form__image-message">
+            <%= form.text_area :content, class: 'form-group__form__image-message__message', placeholder: 'Type a message' %>
+            <div class="edit-Thumbnail" style="background-image: url(<%= @post.image %>);">
+          </div>
+          <div class="submit-center">
+            <%= form.submit "Send", class: "submit-btn b-btn" %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
