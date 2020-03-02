@@ -1,0 +1,15 @@
+<div class="post-content__right__group__comment">
+  <div class="post-content__right__group__comment__upper">
+    <%= link_to user_path(comment.user.id) do %>
+    <h2 class="post-content__right__group__comment__upper__user-name"><%= comment.user.name %></h2>
+    <% end %>
+    <% if user_signed_in? && current_user.id == comment.user_id %>
+      <%= link_to post_comment_path(comment.post_id,comment.id),class: "fa-trash-alt-group", method: :delete do %>
+        <%# <div class="fa-trash-alt-group"> %>
+          <i class="fas fa-trash-alt"></i>
+        <%# </div> %>
+      <% end %>
+    <% end %>
+  </div>
+  <h2 class="post-content__right__group__comment__message"><%= comment.text %></h2>
+</div>

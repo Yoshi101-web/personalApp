@@ -70,6 +70,7 @@
     &__message{
       color: white;
       height: 100%;
+      min-height: 250px;
       resize: none;
       width:100%;
       outline: none;
@@ -119,12 +120,12 @@
   border: 2px solid white;
   border-radius: 5px;
   outline-color: rgba(255, 255, 255, 0.3);
-  transition: 0.3s ease-out; 
+  transition: 0.1s ease-out; 
   cursor: pointer;
   &:hover{
     color: black;
     background-color: rgb(180, 186, 223);
-    outline-offset: 15px;
+    outline-offset: 7px;
     outline-color: rgba(255, 255, 255, 0);
   }
 }
@@ -147,7 +148,7 @@
   height: 50px;
   margin: 0 auto;
   text-align: center;
-  font-size:1.4em;
+  font-size:1.1em;
   font-weight: bold;
   margin-top: 30px;
   color: rgb(255, 87, 87);

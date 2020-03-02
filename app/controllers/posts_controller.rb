@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to posts_path
     else
-      flash.now[:alert] = 'Please post a photo or a video'
+      flash.now[:alert] = 'Please post a photo or a video max30MB'
       render :new
     end
   end

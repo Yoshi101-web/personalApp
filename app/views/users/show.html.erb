@@ -13,15 +13,33 @@
   <div class="swiper-container main-slider loading">
     <div class="swiper-wrapper">
       <% @posts.each do |post| %>
+
+        
         <div class="swiper-slide">
-          <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)" data-swiper-parallax-x="50%">
-            <img src="<%= post.image %>" class="entity-img" />
-          </figure>
+
+          <% if post.image? %>
+            <% if post.image.file.content_type.include?('image/') %>
+              <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)" data-swiper-parallax-x="50%">
+                <img src="<%= post.image %>" class="entity-img" />
+              </figure>
+            <% else %>
+              <video class="slide-bgimg" data-swiper-parallax-x="50%">
+              <source src="<%= post.image %>">
+                <img src="<%= post.image %>" class="entity-img" />
+              </video>
+            <% end %>
+          <% end %>
+
+
           <%= link_to post_path(post.id), class: "content", id: "main-message" do %>
               <p class="title"><%= post.title %></p>
               <span class="caption" data-swiper-parallax-x="30%" data-swiper-parallax-opacity="0"><%= post.content %></span>
           <% end %>
+
+
         </div>
+
+
       <% end %>
     </div>
     <!-- If we need navigation buttons -->
@@ -34,9 +52,28 @@
     <div class="swiper-wrapper" role="navigation">
       <% @posts.each do |post| %>
         <div class="swiper-slide">
+
+          
+          
+          <% if post.image? %>
+            <% if post.image.file.content_type.include?('image/') %>
+              <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)">
+                <img src="<%= post.image %>" class="entity-img" />
+              </figure>
+            <% else %>
+              <video class="slide-bgimg">
+              <source src="<%= post.image %>">
+              </video>
+                <img src="<%= post.image %>" class="entity-img" />
+            <% end %>
+          <% end %>
+
+
           <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)">
             <img src="<%= post.image %>" class="entity-img" />
           </figure>
+
+          
           <div class="content">
             <p class="title"><%= post.title %></p>
           </div>
