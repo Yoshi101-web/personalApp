@@ -1,6 +1,14 @@
 <div class="post-content">
   <div class="post-content__left">
-    <div class="post-content__left__photo" style="background-image: url(<%= @post.image %>);">
+    <div class="post-content__left__photo">
+      <% if @post.image? %>
+        <% if @post.image.file.content_type.include?('image/') %>
+          <div class="post-content__left__photo" style="background-image: url(<%= @post.image %>);"></div>
+        <% else %>
+          <%= video_tag @post.image.url, class: "post-content__left__photo", width: "30%", height: "30%", 
+                        controls: true, autobuffer: true %>
+        <% end %>
+      <% end %>
       <%= link_to "Top", root_path, class: "top" %>
     </div>
   </div>

@@ -1,5 +1,11 @@
 <%= link_to post_path(post.id), class: "post-container" do %>
-  <div class="post-container__post-image" style="background-image: url(<%= post.image %>);"></div>
+  <% if post.image? %>
+    <% if post.image.file.content_type.include?('image/') %>
+      <div class="post-container__post-image" style="background-image: url(<%= post.image %>);"></div>
+    <% else %>
+      <%= video_tag post.image.url, class: "post-container__post-video", width: "30%", height: "30%" %>
+    <% end %>
+  <% end %>
   <div class="post-container__groups">
     <div class="post-container__groups__bg"></div>
     <div class="post-container__groups__title-content">
@@ -8,6 +14,7 @@
     </div>
   </div>
 <% end %>
+
 <script>
 ScrollReveal().reveal('.post-container');
 </script>

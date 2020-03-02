@@ -9,7 +9,7 @@
             <%= form.text_area :content, class: 'form-group__form__image-message__message', placeholder: ' Type a message' %>
             <%= form.label :image, class: 'form-group__form__image-message__label' do %>
               <i class="fas fa-photo-video form-group__form__image-message__label__icon"></i>
-              <%= form.file_field :image, class: 'hidden'%>
+              <%= form.file_field :image, accept: 'image/jpeg,image/gif,image/png,video/*', class: 'hidden'%>
             <% end %>
           </div>
           <div class="submit-center">
