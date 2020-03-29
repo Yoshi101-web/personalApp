@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Courgette&display=swap&subset=latin-ext');
+
+.no-image-contents{
+  height: 100%;
+  width: 100%;
+  background-color: $bgcolor;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__content{
+    height: 50%;
+    width: 50%;
+    text-align: center;
+    h2{
+      line-height:100%;
+      color: white;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      align-items: center;
+      margin-bottom: 50px;
+    }
+    &--top{
+      font-size: 2em;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+
+
 %transition_all_03s {
   transition:all .3s ease;
 }
@@ -19,6 +56,7 @@
   // vertical-align:top;
   float:left;
   transition:opacity .6s ease, transform .3s ease;
+  background-color: rgb(4, 1, 37);
   &.nav-slider{
     width:20%;
     padding-left:5px;
@@ -26,6 +64,7 @@
       cursor:pointer;
       opacity:.4;
       transition:opacity .3s ease;
+
       &.swiper-slide-active{
         opacity:1;
       }
@@ -49,10 +88,11 @@
     opacity:0;
     visibility:hidden;
   }
+  
 }
-.swiper-wrapper{
+// .swiper-wrapper{
 
-}
+// }
 .swiper-slide{
   overflow: hidden;
   @extend %backface_visibility_hidden;
@@ -71,18 +111,22 @@
   .content{
     position:absolute;
     top:40%;
-    left:0;
+    left:7%;
     width:50%;
     padding-left:5%;
+    font-family: 'Courgette', ;
     color:#fff;
+    text-shadow: 1px 1px 2px black, 0 0 1em rgb(17, 17, 39), 0 0 0.2em rgb(3, 12, 65);
+    text-decoration: none;
     .title{
-      font-size:2.6em;
+      font-size:2.8em;
       font-weight:bold;
       margin-bottom:30px;
+      
     }
     .caption{
       display:block;
-      font-size:13px;
+      font-size:20px;
       line-height:1.4;
       transform:translateX(50px);
       // opacity:0;
@@ -93,7 +137,16 @@
       }
     }
   }
+  #main-message{
+    opacity: 0;
+    transition:0.3s;
+    &:hover{
+      opacity: 1;
+      cursor: pointer;
+    }
+  }
 }
+
 [class^="swiper-button-"]{
   width:44px;
   opacity:0;

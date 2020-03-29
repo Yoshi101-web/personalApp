@@ -4,7 +4,7 @@
   height: 100vh;
   width: 100vw;
   z-index:0;
-  overflow: hidden;
+  overflow: scroll;
   .sign{
     height: 100%;
     width: 100%;
@@ -43,11 +43,16 @@
             width: 120px;
             color: white;
             border-radius: 8px;
-            background-color: rgba(35, 0, 58, 0.5);
+            background-color: rgba(17, 3, 68, 0.5);
             cursor: pointer;
-            margin-bottom: 70px;
+            margin-bottom: 60px;
+            outline: none;
             &:hover{
-              background-color: hsla(276, 40%, 70%, 0.4);
+              background-color: hsla(251, 40%, 70%, 0.4);
+            }
+            &:active{
+              background-color: hsla(261, 51%, 81%, 0.7);
+              box-shadow: 0 1px 15px 3px  hsla(266, 39%, 84%, 0.4);
             }
           }
           .sign-up{
@@ -55,20 +60,6 @@
           }
         }
       }
-      // .back-btn{
-        //   margin-top: 30px;
-        //   margin-left: 5px;
-        //   font-size: 1.7em;
-        //   height: 50px;
-        //   width: 100px;
-        //   border: none;
-        //   color: black;
-        //   background-color: #ffffff00;
-        //   -webkit-text-stroke-width: 1.2px;
-        //   -webkit-text-stroke-color: rgb(255, 255, 255);
-        //   outline:0;
-        //   cursor: pointer;
-        // }
       .change-sign{
         font-family: 'Francois One', ;
         font-size: 1.4em;
@@ -79,9 +70,18 @@
         border-radius: 3px;
         cursor: pointer;
         opacity: 0.9;
+        margin-bottom: 30px;
         &:hover{
-          background-color: rgba(255, 255, 255, 0.3);;
+          background-color: rgba(217, 215, 228, 0.3);
         }
+        &:active{
+          background-color: rgba(255, 255, 255, 0.5);
+          box-shadow: 0 1px 15px 3px  rgba(205, 198, 241, 0.4);
+        }
+      }
+      .toppage-top-btn{
+        color: white;
+        margin-left: 20px;
       }
     }
   }
@@ -89,15 +89,15 @@
 
 .signs::before{
   content: '';
-  background-image: url('https://manimanimag.jp/wp-content/uploads/2018/01/01-skytree.jpg');
-  filter: blur(8px);/*ぼかし度*/
+  background-image: url('/photos/skytree_night.jpg');
+  filter: blur(5px);/*ぼかし度*/
   position: absolute;
-  /* 参考: http://designcolor-web.com/2016/09/14/css-blur-effects-background/*/
-  top: -8px;
-  left: -8px;
-  right: -8px;
-  bottom: -8px;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
   z-index: -1;
+  overflow: hidden;
 }
 .notice{
   color: white;

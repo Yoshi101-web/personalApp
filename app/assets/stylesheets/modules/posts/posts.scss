@@ -1,16 +1,23 @@
-// .position{
-//   position: absolute;
-//   left: 0;
-//   top: 0;
-//   z-index: -1;
-// }
+@keyframes Gradient {
+	0% {
+		background-position: 0% 50%
+	}
+	50% {
+		background-position: 100% 50%
+	}
+	100% {
+		background-position: 0% 50%
+	}
+}
 
-
+@import url('https://fonts.googleapis.com/css?family=Song+Myung&display=swap');
 
 .posts-all{
   height: auto;
   width: 100vw;
-  background-color: gray;
+  background: linear-gradient(45deg, hsl(209, 97%, 28%), #2a0033, #00694f);
+  background-size: 600% 600%;
+  animation: Gradient 3s ease infinite;
   .posts-containers{
     height: 100%;
     width: 100%;
@@ -30,19 +37,59 @@
         border: 2px solid rgba(0, 0, 0,0.2);
         border-radius: 3px;
         cursor: pointer;
+        position: relative;
+
         &__post-image{
           height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
           background-size: cover;
           background-position: center;
         }
-        &__post-title{
-          font-size: 40px;
+        &__post-video{
+          height: 100%;
+          width: auto;
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-size: cover;
+          background-position: center;
+        
         }
-        &__post-content{
-          font-size: 20px;
+        &__groups{
+          height: 100%;
+          width: 100%;
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          transition: 0.2s;
+          &:hover{
+          opacity: 1;
+          }
+          &__title-content{
+            height: 100%;
+            width: 100%;
+            background-color: rgba(6, 3, 48, 0.8);
+            &__post-title{
+              font-family: 'Song Myung', ;
+              color: white;
+              font-size: 40px;
+              padding: 50px 60px 0px;
+
+            }
+            &__post-content{
+              font-family: 'Song Myung', ;
+              color: white;
+              padding: 50px 60px 0px;
+              font-size: 20px;
+            }
+          }
         }
+        
       }
     }
   }
 }
-

@@ -1,37 +1,25 @@
-<div class="wrapper">
-  <div class="header">
-    <div class="header__title">
-        <img src="/svg/Phovie_only_small.svg" class="header__title__logo" >
-    </div>
-    <%= link_to "log out", destroy_user_session_path, class: "log-out", method: :delete %>
-    <div class="header__menuWrapper">
-      <%= link_to "#menu", id: "menuButton" do %>
-        <span>MENU</span>
-      <% end %>
-    </div>
-  </div>
-  <div class="sidebar">
-    <ul class="sidebar-list">
-      <li class="sidebar-item"><%= link_to "logout", "#", class: "sidebar-anchor" %></li>
-      <li class="sidebar-item"><%= link_to "logout", "#", class: "sidebar-anchor" %></li>
-      <li class="sidebar-item"><%= link_to "logout", "#", class: "sidebar-anchor" %></li>
-    </ul>
-  </div>
-  <div class="contents">
-    <div class="content">
-      <div class="background-video">
-
+<div class="toppage-wrapper">
+  <div class="toppage-contents">
+    <div class="toppage-content">
+      <%# <div class="logo-btn-group">
+      <h2>text</h2>
+      </div> %>
+      <div id="video-container">
+        <video src="/movies/final_comp_half.mp4" autoplay loop muted>
+        </video>
       </div>
-      <div class="dot"></div>
+      <div class="overlay"></div>
+      <div class="toppage-content__group">
+          <img src="/svg/Phovie_only_small.svg" class="top-logo" >
+          <div class="button-group">
+          <%= link_to user_session_path, class: "button-group__sign-in" do %>
+            <h2>Log in</h2>
+          <% end %>
+          <%= link_to new_user_registration_path, class: "button-group__sign-up" do %>
+            <h2>Sign up</h2>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<div class="nav-right visible-xs">
-  <div class="button" id="btn">
-    <div class="bar top"></div>
-    <div class="bar middle"></div>
-    <div class="bar bottom"></div>
-  </div>
-</div>
-<!-- nav-right -->
-<main>
+</div

@@ -10,14 +10,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    Post.create(post_params)
-    redirect_to controller: :toppages, action: :index
+    @post = Post.new(post_params)
+    if @post.save
+      redirect_to posts_path
+    else
+      flash.now[:alert] = 'Please post a photo or a video max30MB'
+      render :new
+    end
   end
 
   def show
     @comment = Comment.new
     @post = Post.find(params[:id])
-    @comments = @post.comments.includes(:user)
+    @comments = @post.comments.includes(:user).order("created_at ASC")
   end
 
   def edit

@@ -1,93 +1,141 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/js/swiper.min.js"></script>
-<div class="swiper-container main-slider loading">
-  <div class="swiper-wrapper">
-    <% @posts.each do |post| %>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)" data-swiper-parallax-x="50%">
-          <img src="<%= post.image %>" class="entity-img" />
-        </figure>
-        <div class="content">
-          <p class="title">Shaun Matthews</p>
-          <span class="caption" data-swiper-parallax-x="30%" data-swiper-parallax-opacity="0">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span>
-        </div>
-      </div>
-    <% end %>
+
+
+<% if @posts.empty? %>
+  <div class="no-image-contents">
+    <div class="no-image-contents__content">
+      <h2>Not posted yet.</h2>
+      <a href="/" class="no-image-contents__content--top">Top</a>
+    </div>
   </div>
-  <!-- If we need navigation buttons -->
-  <div class="swiper-button-prev swiper-button-white"></div>
-  <div class="swiper-button-next swiper-button-white"></div>
-</div>
+<% else%>
+  <div class="swiper-container main-slider loading">
+    <div class="swiper-wrapper">
+      <% @posts.each do |post| %>
 
-<!-- Thumbnail navigation -->
-<div class="swiper-container nav-slider loading">
-  <div class="swiper-wrapper" role="navigation">
-    <% @posts.each do |post| %>
-      <div class="swiper-slide">
-        <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)">
-          <img src="<%= post.image %>" class="entity-img" />
-        </figure>
-        <div class="content">
-          <p class="title">Shaun Matthews</p>
+        
+        <div class="swiper-slide">
+
+          <% if post.image? %>
+            <% if post.image.file.content_type.include?('image/') %>
+              <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)" data-swiper-parallax-x="50%">
+                <img src="<%= post.image %>" class="entity-img" />
+              </figure>
+            <% else %>
+              <video class="slide-bgimg" data-swiper-parallax-x="50%">
+              <source src="<%= post.image %>">
+                <img src="<%= post.image %>" class="entity-img" />
+              </video>
+            <% end %>
+          <% end %>
+
+
+          <%= link_to post_path(post.id), class: "content", id: "main-message" do %>
+              <p class="title"><%= post.title %></p>
+              <span class="caption" data-swiper-parallax-x="30%" data-swiper-parallax-opacity="0"><%= post.content %></span>
+          <% end %>
+
+
         </div>
-      </div>
-    <% end %>
+
+
+      <% end %>
+    </div>
+    <!-- If we need navigation buttons -->
+    <div class="swiper-button-prev swiper-button-white"></div>
+    <div class="swiper-button-next swiper-button-white"></div>
   </div>
-</div>
 
-<script>
-  let mainSliderSelector = '.main-slider',
-      navSliderSelector = '.nav-slider';
+  <!-- Thumbnail navigation -->
+  <div class="swiper-container nav-slider loading">
+    <div class="swiper-wrapper" role="navigation">
+      <% @posts.each do |post| %>
+        <div class="swiper-slide">
 
-  // Main Slider
-  let mainSliderOptions = {
-    loop: true,
-    speed:1000,
-    parallax:true,
-    autoplay:{
-      delay:3000
-    },
-    loopAdditionalSlides: 10,
-    grabCursor: true,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    on: {
-      init: function(){
-        this.autoplay.stop();
+          
+          
+          <% if post.image? %>
+            <% if post.image.file.content_type.include?('image/') %>
+              <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)">
+                <img src="<%= post.image %>" class="entity-img" />
+              </figure>
+            <% else %>
+              <video class="slide-bgimg">
+              <source src="<%= post.image %>">
+              </video>
+                <img src="<%= post.image %>" class="entity-img" />
+            <% end %>
+          <% end %>
+
+
+          <figure class="slide-bgimg" style="background-image:url(<%= post.image %>)">
+            <img src="<%= post.image %>" class="entity-img" />
+          </figure>
+
+          
+          <div class="content">
+            <p class="title"><%= post.title %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  
+  <script>
+    let mainSliderSelector = '.main-slider';
+    let   navSliderSelector = '.nav-slider';
+
+    // Main Slider
+    let mainSliderOptions = {
+      loop: true,
+      speed:1000,
+      parallax:true,
+      autoplay:{
+        delay:3000
       },
-      imagesReady: function(){
-        this.el.classList.remove('loading');
-        this.autoplay.start();
-      }
-    }
-  };
-  let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
-
-  // Navigation Slider
-  let navSliderOptions = {
-        loop: true,
-        loopAdditionalSlides: 10,
-        speed:1000,
-        spaceBetween: 5,
-        slidesPerView: 5,
-        centeredSlides : true,
-        touchRatio: 0.2,
-        slideToClickedSlide: true,
-        direction: 'vertical',
-        on: {
-          imagesReady: function(){
-            this.el.classList.remove('loading');
-          },
-          click: function(){
-            mainSlider.autoplay.stop();
-          }
+      loopAdditionalSlides: 10,
+      grabCursor: true,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      on: {
+        init: function($, Swiper){
+          this.autoplay.stop();
+        },
+        imagesReady: function($, Swiper){
+          this.el.classList.remove('loading');
+          this.autoplay.start();
         }
-      };
-  let navSlider = new Swiper(navSliderSelector, navSliderOptions);
+      }
+    };
+    let mainSlider = new Swiper(mainSliderSelector, mainSliderOptions);
 
-  // Matching sliders
-  mainSlider.controller.control = navSlider;
-  navSlider.controller.control = mainSlider;
-</script>
+    // Navigation Slider
+    let navSliderOptions = {
+          loop: true,
+          loopAdditionalSlides: 10,
+          speed:1000,
+          spaceBetween: 5,
+          slidesPerView: 5,
+          centeredSlides : true,
+          touchRatio: 0.2,
+          slideToClickedSlide: true,
+          direction: 'vertical',
+          on: {
+            imagesReady: function($, Swiper){
+              this.el.classList.remove('loading');
+            },
+            click: function($, Swiper){
+              mainSlider.autoplay.stop();
+            }
+          }
+        };
+    let navSlider = new Swiper(navSliderSelector, navSliderOptions);
+
+    // Matching sliders
+    mainSlider.controller.control = navSlider;
+    navSlider.controller.control = mainSlider;
+  </script>
+<% end %>
