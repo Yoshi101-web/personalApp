@@ -83,5 +83,6 @@ production:
   database: personalApp_production
   username: personalApp
   password: <%= ENV['PERSONALAPP_DATABASE_PASSWORD'] %>
-
-  
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
