@@ -66,3 +66,4 @@ gem 'streamio-ffmpeg'
 gem 'mini_magick'
 gem "jquery-rails"
 gem 'font-awesome-sass'
+gem 'fog-aws'
