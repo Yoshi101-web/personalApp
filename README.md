@@ -10,7 +10,7 @@
 
 ### **https://phovie.herokuapp.com** 
 
-開発環境
+開発環境  
 ・Ruby 2.5.1  
 ・Rails 5.2.4.1  
 ・PostgreSQL  
