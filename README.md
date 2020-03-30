@@ -1,4 +1,4 @@
-Phovie
+## 🟣　Phovie
   無料の写真、動画共有アプリケーション
 
 アプリ概要
@@ -6,19 +6,19 @@ Phovie
   今までにないアプリケーションをイメージして制作しました。
   海外のようなアプリケーションに感じていただけるように英語表記にしております。
 
-## 🌐 App URL
+## 🟣 App URL
 
 ### **https://phovie.herokuapp.com** 
 
 開発環境
-・Ruby 2.5.1
-・Rails 5.2.4.1
-・PostgreSQL
-・Heroku
-・VSCode
-ソフトウェア
-  ・Illustrator
-  ・AfterEffects
+・Ruby 2.5.1  
+・Rails 5.2.4.1 
+・PostgreSQL  
+・Heroku  
+・VSCode  
+ソフトウェア  
+  ・Illustrator 
+  ・AfterEffects  
 
 
 ・ログイン、新規登録前の表示
