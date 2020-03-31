@@ -15,7 +15,7 @@
 ・Rails 5.2.4.1  
 ・PostgreSQL  
 ・Heroku  
-・AWS-S3
+・AWS-S3  
 ・VSCode  
 ソフトウェア  
   ・Illustrator  
