@@ -29,6 +29,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        overflow: auto;
         &__photo{
           width: 100%;
           height:auto;
