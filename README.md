@@ -23,7 +23,8 @@
 
 
 ### 🔵 ログイン、新規登録前の表示  
-  動画を編集、加工して背景にしています。
+  動画を編集、加工して背景にしています。  
+  Phovieのロゴは、Illustratorで作成、SVGで出力して使用
 <img width="1438" alt="toppage" src="https://user-images.githubusercontent.com/60503907/77884989-1ff9ff00-72a1-11ea-8d58-2453958f4b84.png">
 
 ### 🔵 ログイン、新規登録後の表示  
